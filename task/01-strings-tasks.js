@@ -9,6 +9,8 @@
 
 
 
+const {type} = require("mocha/lib/utils");
+
 /**
  * Returns the result of concatenation of two strings.
  *
@@ -21,8 +23,8 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(value1, value2) {
-    throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {                 // passed
+    return value1 + value2;
 }
 
 
@@ -37,8 +39,8 @@ function concatenateStrings(value1, value2) {
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(value) {
-    throw new Error('Not implemented');
+function getStringLength(value) {                      // passed
+    return value.length;
 }
 
 /**
@@ -54,8 +56,8 @@ function getStringLength(value) {
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(firstName, lastName) {
-    throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {                   // passed
+    return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -69,7 +71,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    throw new Error('Not implemented');
+    return value.slice(7, value[value.length - 2]);                                    // not passed
 }
 
 
@@ -83,8 +85,8 @@ function extractNameFromTemplate(value) {
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(value) {
-    throw new Error('Not implemented');
+function getFirstChar(value) {                                //not passed but I think the test are broke down
+    return value[0];
 }
 
 /**
@@ -98,8 +100,8 @@ function getFirstChar(value) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(value) {
-    throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {                            // passed
+    return value.trim();
 }
 
 /**
@@ -113,8 +115,12 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(value, count) {
-    throw new Error('Not implemented');
+function repeatString(value, count) {                                      // pased
+    let str = '';
+    for(let i = 0; i < count; i++){
+        str += value;
+    }
+    return str;
 }
 
 /**
@@ -129,8 +135,9 @@ function repeatString(value, count) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(str, value) {
-    throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {                                     // not passed
+    let arr = str.split(' ').filter(item => item !== value).join(' ');
+    return arr;
 }
 
 /**
@@ -144,8 +151,8 @@ function removeFirstOccurrences(str, value) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(str) {
-    throw new Error('Not implemented');
+function unbracketTag(str) {                                                           // passed
+    return str.slice(1, -1);
 }
 
 
@@ -159,8 +166,8 @@ function unbracketTag(str) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(str) {
-    throw new Error('Not implemented');
+function convertToUpperCase(str) {                                                    // passed
+    return str.toUpperCase();
 }
 
 /**
@@ -173,8 +180,8 @@ function convertToUpperCase(str) {
  *   'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com' => ['angus.young@gmail.com', 'brian.johnson@hotmail.com', 'bon.scott@yahoo.com']
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(str) {
-    throw new Error('Not implemented');
+function extractEmails(str) {                                                           // passed
+    return str.split(';');
 }
 
 /**
@@ -200,7 +207,7 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(width, height) {
+function getRectangleString(width, height) {                                                       // not passed
     throw new Error('Not implemented');
 }
 
@@ -221,7 +228,7 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    throw new Error('Not implemented');                                                                                        // not passed
 }
 
 /**
@@ -237,8 +244,10 @@ function encodeToRot13(str) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(value) {
-    throw new Error('Not implemented');
+function isString(value) {                                                 // 50/50 passed
+    if(typeof value === 'string'){
+        return true;
+    } else return false;
 }
 
 
@@ -266,8 +275,8 @@ function isString(value) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(value) {
-    throw new Error('Not implemented');
+function getCardId(value) {                                                                 // not passed
+
 }
 
 

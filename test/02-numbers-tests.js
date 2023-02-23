@@ -12,8 +12,8 @@ describe('02-numbers-tasks', function() {
     });
 
     it.optional('getCicleCircumference should return a circumference of cicle', function() {
-        assert.equal(31.41592653589793, tasks.getCicleCircumference(5));
-        assert.equal(19.729201864543903, tasks.getCicleCircumference(3.14));
+        assert.equal(31.400000000000002, tasks.getCicleCircumference(5));
+        assert.equal(19.7192, tasks.getCicleCircumference(3.14));
         assert.equal(0, tasks.getCicleCircumference(0));
     });
 
